@@ -1,99 +1,61 @@
-# 🚨 Fraud Detection – AI/ML Attachment Project
+# Fraud Detection — AI/ML Attachment Project
 
-This is a practical **fraud-detection mini-project** built for AI/ML attachment applications.  
-It uses **synthetic mobile-money style transactions** and an **Isolation Forest model** to detect suspicious or unusual behaviour.
+A compact fraud-detection example using synthetic transaction data and Isolation Forest. This repository is organized to be presentation-ready for an AI/ML attachment:
 
-Small, clean, easy to run, and presentation-ready.
+- Clear package structure under `src/fraud_detection`
+- Reproducible data generation and training API
+- Small demo script and a minimal test
 
----
+Quickstart
 
-## 🎯 What this project demonstrates
-
-- synthetic transaction data generation  
-- anomaly / fraud detection using ML  
-- unsupervised learning (Isolation Forest)  
-- evaluation metrics and simple visualizations  
-- clear Python project structure  
-
-A good fit for **attachment, internship applications, and portfolio use**.
-
----
-
-## ⚙️ Quickstart
-
-### 1️⃣ Create and activate a virtual environment (recommended)
+1. Create and activate a virtual environment (recommended):
 
 ```bash
 python -m venv .venv
-```
-
-**Windows**
-
-```bash
+# Windows
 .\.venv\Scripts\activate
-```
-
-**macOS / Linux**
-
-```bash
+# macOS / Linux
 source .venv/bin/activate
 ```
 
-### 2️⃣ Install dependencies
+2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run the demo script
+3. Run the demo:
 
 ```bash
 python run_demo.py
 ```
 
----
+Repository layout
 
-## 🗂️ Repository layout
+- `src/fraud_detection/` — library modules (`data.py`, `preprocess.py`, `model.py`, `visualize.py`)
+- `notebooks/` — original notebook copy
+- `run_demo.py` — runnable pipeline to generate data, train and evaluate
+- `requirements.txt` — Python dependencies
+- `tests/` — minimal smoke tests
 
-```text
-src/fraud_detection/
- ├── data.py          # generate synthetic transactions
- ├── preprocess.py    # feature encoding / preparation
- ├── model.py         # train Isolation Forest
- └── visualize.py     # plotting helpers
-notebooks/            # original exploration notebook
-run_demo.py           # end-to-end demo pipeline
-requirements.txt      # dependencies
-tests/                # light smoke tests
+Git / GitHub
+
+To push to GitHub (after creating a repo on GitHub):
+
+```bash
+git init
+git add .
+git commit -m "Initial project import — fraud detection demo"
+# Add remote and push (replace URL)
+git remote add origin https://github.com/<your-username>/<repo>.git
+git branch -M main
+git push -u origin main
 ```
 
----
+License
 
-## 🧠 What the model actually does
+This project is released under the MIT License. See `LICENSE`.
 
-- creates fake mobile-money style transactions  
-- injects “fraud-like” behaviour such as:
-  - unusually large amounts  
-  - suspicious late-night activity  
-- trains an **unsupervised anomaly detector**  
-- flags suspicious transactions without needing real labels  
+Contact
 
-> No real transaction data is used.
-
----
-
-## 🧾 License
-
-Released under the **MIT License**.
-
----
-
-## 🙋 Contact
-
-If you’re reviewing this for **attachment placement** and would like:
-
-- a short report  
-- more experiments  
-- deployment as a small app  
-
-I’m happy to extend the project.
+If you want me to prepare a polished README with expanded methodology, visuals, or a small report, tell me which parts to expand.
