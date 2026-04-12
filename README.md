@@ -1,61 +1,70 @@
-# Fraud Detection — AI/ML Attachment Project
+# M-Pesa Fraud Detection
 
-A compact fraud-detection example using synthetic transaction data and Isolation Forest. This repository is organized to be presentation-ready for an AI/ML attachment:
+A stronger, presentation-ready fraud detection project built around synthetic
+mobile-money transactions and an Isolation Forest anomaly detector.
 
-- Clear package structure under `src/fraud_detection`
-- Reproducible data generation and training API
-- Small demo script and a minimal test
+This version goes beyond a minimal demo by adding:
 
-Quickstart
+- richer synthetic M-Pesa-like transaction signals
+- reusable feature engineering and preprocessing
+- anomaly score threshold calibration
+- evaluation metrics for fraud screening
+- simple visualizations and top-risk transaction review
+- tests that validate the pipeline behavior
 
-1. Create and activate a virtual environment (recommended):
+## What The Project Demonstrates
+
+- realistic synthetic fraud pattern injection
+- unsupervised anomaly detection with Isolation Forest
+- feature engineering for transaction risk signals
+- threshold selection based on validation labels
+- portfolio-friendly Python package structure
+
+## Quickstart
 
 ```bash
 python -m venv .venv
-# Windows
-.\.venv\Scripts\activate
-# macOS / Linux
-source .venv/bin/activate
-```
-
-2. Install dependencies:
-
-```bash
+.venv\Scripts\activate
 pip install -r requirements.txt
-```
-
-3. Run the demo:
-
-```bash
+pip install -e .
 python run_demo.py
+pytest
 ```
 
-Repository layout
+## Project Layout
 
-- `src/fraud_detection/` — library modules (`data.py`, `preprocess.py`, `model.py`, `visualize.py`)
-- `notebooks/` — original notebook copy
-- `run_demo.py` — runnable pipeline to generate data, train and evaluate
-- `requirements.txt` — Python dependencies
-- `tests/` — minimal smoke tests
-
-Git / GitHub
-
-To push to GitHub (after creating a repo on GitHub):
-
-```bash
-git init
-git add .
-git commit -m "Initial project import — fraud detection demo"
-# Add remote and push (replace URL)
-git remote add origin https://github.com/<your-username>/<repo>.git
-git branch -M main
-git push -u origin main
+```text
+src/fraud_detection/
+  __init__.py
+  data.py
+  preprocess.py
+  model.py
+  evaluation.py
+  visualize.py
+run_demo.py
+tests/test_pipeline.py
+requirements.txt
 ```
 
-License
+## Modeling Notes
 
-This project is released under the MIT License. See `LICENSE`.
+The project uses an unsupervised model because real fraud labels are often
+scarce or delayed in production systems. To make the demo more credible, the
+synthetic data injects several fraud behaviors instead of only one:
 
-Contact
+- unusually large transfers
+- bursts of rapid repeat transactions
+- late-night activity
+- new recipient interactions
+- high-risk location patterns
+- repeated failed PIN attempts
 
-If you want me to prepare a polished README with expanded methodology, visuals, or a small report, tell me which parts to expand.
+The model is still intentionally simple enough to explain in an attachment or
+internship interview.
+
+## Possible Next Extensions
+
+- compare Isolation Forest against Local Outlier Factor or One-Class SVM
+- add SHAP or feature-attribution style explanations
+- expose the scorer behind a small API or Streamlit app
+- simulate drift and monitor alert rates over time
