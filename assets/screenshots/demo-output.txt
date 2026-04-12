@@ -1,0 +1,24 @@
+Fraud Detection Demo
+============================================================
+precision: 0.9866
+recall: 0.9800
+f1: 0.9833
+roc_auc: 0.9999
+pr_auc: 0.9976
+
+Confusion Matrix
+[[4848    2]
+ [   3  147]]
+
+Top flagged transactions
+   amount transaction_type channel  transaction_velocity_1h  failed_pin_attempts  location_risk_score  fraud_score  predicted_fraud  is_fraud
+ 39596.67         withdraw     api                        7                    5                0.860     0.109216                1         1
+ 39815.92         withdraw     app                       13                    5                0.949     0.106883                1         1
+ 26045.96       send_money   agent                       13                    3                0.712     0.100078                1         1
+ 59384.70       send_money    ussd                        8                    5                0.981     0.097269                1         1
+ 23626.62         withdraw     api                       12                    5                0.705     0.096632                1         1
+133357.07       send_money    ussd                       11                    3                0.935     0.094112                1         1
+ 81758.26         withdraw    ussd                        7                    5                0.719     0.093248                1         1
+ 36817.70         withdraw     api                        9                    5                0.771     0.091814                1         1
+ 50621.82         withdraw    ussd                        9                    5                0.730     0.090820                1         1
+ 46047.93         withdraw     api                       12                    4                0.790     0.090500                1         1
