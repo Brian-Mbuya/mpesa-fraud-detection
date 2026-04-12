@@ -1,13 +1,17 @@
+"""Fraud detection package."""
+
 from .data import generate_synthetic_data
-from .preprocess import prepare_features
-from .model import train_isolation_forest, predict_is_fraud
-from .visualize import plot_amount_distribution, plot_avg_amount_by_label
+from .evaluation import EvaluationResult, evaluate_predictions
+from .model import calibrate_threshold, score_dataset, train_isolation_forest
+from .preprocess import build_feature_frame, prepare_dataset
 
 __all__ = [
+    "EvaluationResult",
+    "build_feature_frame",
+    "calibrate_threshold",
+    "evaluate_predictions",
     "generate_synthetic_data",
-    "prepare_features",
+    "prepare_dataset",
+    "score_dataset",
     "train_isolation_forest",
-    "predict_is_fraud",
-    "plot_amount_distribution",
-    "plot_avg_amount_by_label",
 ]
